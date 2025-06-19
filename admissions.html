@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>New Majestry School</title>
+  <link rel="stylesheet" href="styles.css" />
+  
+ 
+</head>
+<body>
+  <header id="new" >
+    <nav role="navigation" aria-label="Primary Navigation" class="container" >
+      <div class="navbar-logo" id="logos"><a href="index.html">
+        <img src="Images/Logo.png"  alt=""></a>
+      <span class="logo" tabindex="0">New Majestry School</span>
+      </div>
+      
+      <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <div class="nav-links" id="primary-navigation" role="menu">
+        <a href="index.html" role="menuitem" tabindex="0">Home</a>
+        <a href="about.html" role="menuitem" tabindex="0">About</a>
+        <a href="events.html" role="menuitem" tabindex="0">Events & Activities</a>
+        <a href="academics.html" role="menuitem" tabindex="0">Academics</a>
+        <a href="booklist.html" role="menuitem" tabindex="0">Book List</a>
+        <a href="admissions.html" role="menuitem" tabindex="0">Admissions</a>
+      </div>
+    </nav>
+  </header>
+
+  
+  <div class="scrolling-container" aria-label="Announcement: Admission Open 2025-26">
+    <div class="scrolling-text" role="marquee" aria-live="off">
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+    </div>
+  </div>
+   <br> 
+   <div class="apply-online-tab" tabindex="0" role="link" aria-label="Apply online for admission">
+  <a id="material-icons" href="admissions.html"><span  aria-hidden="true">Apply Online</span></a> 
+</div> <br>
+
+    <section id="admissions" aria-label="Admissions and Contact Form Section">
+      <h2>Admissions</h2>
+      <p>
+        Learn about the application process, important dates, and how to become part of New Majestry School vibrant community.<br />
+        Use the form below to start your application or reach out with any questions.
+      </p>
+
+      <div id="contact-form-container">
+        <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" >
+            <input type="hidden" name="access_key" value="6c69b70e-172d-4227-b7b8-d9faef21180e">
+          <div class="form-group">
+            <input type="text" id="fullname" name="name" placeholder="Full Name" required/>
+            <label for="fullname">Full Name<span aria-hidden="true" style="color:#dc2626;">*</span></label>
+            <span id="fullname-error" style="color:#dc2626; font-size:0.875rem; display:none;">Please enter your full name.</span>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Email Address" required/>
+            <label for="email">Email Address<span aria-hidden="true" style="color:#dc2626;">*</span></label>
+            <span id="email-error" style="color:#dc2626; font-size:0.875rem; display:none;">Please enter a valid email address.</span>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number " required />
+            <label for="phone">Phone Number </label>
+            <span id="phone-error" style="color:#dc2626; font-size:0.875rem; display:none;">Please enter a valid phone number.</span>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" placeholder="Message (optional)"  rows="4"></textarea>
+            <label for="message">Message (optional)</label>
+          </div>
+          <button type="submit">Submit</button>
+          <div id="submit-success" role="alert" aria-live="polite">Thank you! Your message has been sent.</div>
+        </form>
+      </div>
+    </section> 
+  </main>
+  <!-- GOOGLE MAP START -->
+ <div id="map">
+    <section class="map-container" aria-label="Map showing school location">
+      <iframe
+        class="map-iframe"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3677.5506793288837!2d75.9346867!3d22.8191073!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631cedf5673ef5%3A0x706c281bfd28579e!2sNew%20Ames%20School%2Cdwarka%20Valley%2C%20in%20front%20of%20omaxe%20city%20-2%2Cmangliya%2C%20Indoreangliya!5e0!3m2!1sen!2sin!4v1750017930376!5m2!1sen!2sin"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Google Map of Greenwood Elementary School"
+      ></iframe>
+    </section>
+  </div>
+  <!-- Footer Page Start ! -->
+   
+
+  <footer class="footer" role="contentinfo" aria-label="School website footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <!-- Quick Links -->
+      <section class="footer-section" aria-labelledby="footer-quick-links-title">
+        <h3 id="footer-quick-links-title">Quick Links</h3>
+        <nav aria-label="Quick Links Navigation">
+          <ul class="footer-links">
+            <li><a href="index.html" tabindex="0">Home</a></li>
+            <li><a href="about.html" tabindex="0">About Us</a></li>
+            <li><a href="events.html" tabindex="0">Events & Activities</a></li>
+            <li><a href="academics.html" tabindex="0">Academics</a></li>
+            <li><a href="booklist.html" tabindex="0">Book List</a></li>
+            <li><a href="admissions.html" tabindex="0">Admissions</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <!-- Contact Info -->
+      <section class="footer-section" aria-labelledby="footer-contact-title">
+        <h3 id="footer-contact-title">Contact</h3>
+        <ul class="contact-list">
+          <li><strong>Phone:</strong> <a href="tel:+1234567890" tabindex="0">9009088328 </a></li>
+          <li><strong>Phone:</strong> <a href="tel:+1234567890" tabindex="0">6260556227</a></li>
+          <li><strong>Email:</strong> <a href="mailto:info@school.edu" tabindex="0">info@school.edu</a></li>
+        </ul>
+      </section>
+
+      <!-- Address -->
+      <section class="footer-section" aria-labelledby="footer-address-title">
+        <h3 id="footer-address-title">Address</h3>
+        <address class="address-list" tabindex="0">
+          103,104 Dwarka Valley Colony<br />
+          Mangliya, Indore (453771)<br />
+          Madhya Pradesh.
+        </address>
+      </section>
+
+      <!-- Social Media -->
+      <section class="footer-section" aria-labelledby="footer-social-title">
+        <h3 id="footer-social-title">Follow Us</h3>
+        <ul class="social-list">
+          <li><a href="https://facebook.com/school" aria-label="Facebook" tabindex="0" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" focusable="false" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.406.593 24 1.325 24h11.494v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.892-4.788 4.659-4.788 1.325 0 2.466.099 2.797.143v3.24l-1.918.001c-1.505 0-1.797.716-1.797 1.765v2.316h3.592l-.468 3.622h-3.124V24h6.116c.73 0 1.324-.593 1.324-1.326V1.326C24 .593 23.406 0 22.675 0z"/></svg>
+          </a></li>
+ 
+          <li><a href="https://www.instagram.com/newmajestryschool/" aria-label="Instagram" tabindex="0" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" focusable="false" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.07 1.645.07 4.85 0 3.204-.012 3.584-.07 4.85-.149 3.227-1.667 4.771-4.919 4.919-1.267.058-1.645.07-4.85.07-3.204 0-3.584-.012-4.85-.07-3.252-.148-4.771-1.692-4.919-4.919-.058-1.266-.07-1.645-.07-4.85 0-3.205.012-3.585.07-4.85.148-3.228 1.667-4.771 4.919-4.919 1.267-.058 1.645-.07 4.85-.07zm0-2.163c-3.292 0-3.703.012-4.99.07-4.159.19-6.95 3.388-7.14 7.524-.06 1.274-.07 1.695-.07 4.854 0 3.292.012 3.703.07 4.99.19 4.159 3.388 6.95 7.524 7.14 1.274.06 1.695.07 4.854.07 3.292 0 3.703-.012 4.99-.07 4.159-.19 6.95-3.388 7.14-7.524.06-1.274.07-1.696.07-4.854 0-3.292-.012-3.703-.07-4.99-.19-4.159-3.388-6.953-7.524-7.14zM12 5.838c-3.404 0-6.162 2.758-6.162 6.162s2.758 6.162 6.162 6.162 6.162-2.758 6.162-6.162-2.758-6.162-6.162-6.162zm0 10.23c-2.265 0-4.068-1.803-4.068-4.068s1.803-4.068 4.068-4.068 4.068 1.803 4.068 4.068-1.803 4.068-4.068 4.068zm6.406-11.845a1.44 1.44 0 1 1 0-2.88 1.44 1.44 0 0 1 0 2.88z"/></svg>
+          </a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 New Majestry School. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+  <!-- Footer Page END ! -->
+
+  <script>
+    (function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      // Toggle navigation menu on mobile
+      menuToggle.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !expanded);
+        navLinks.classList.toggle('open');
+      });
+
+      // Optional: close menu when clicking a nav link (mobile)
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (navLinks.classList.contains('open')) {
+            navLinks.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', false);
+          }
+        });
+      });
+    })();
+
+    //   <!-- Footer Page Start ! -->
+
+      // Accessibility: Allow keyboard toggle of details elements (accordion on mobile)
+  document.querySelectorAll('.footer-accordion summary').forEach((summary) => {
+    summary.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        summary.parentElement.open = !summary.parentElement.open;
+      }
+    });
+  });
+    //  <!-- Footer Page END ! -->
+  </script>
+</body>
+</html>
+

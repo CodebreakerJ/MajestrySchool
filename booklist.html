@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MS School Book List</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+
+/* PAGE TITLE */
+h1.page-title {
+  margin: 40px 0 24px;
+  font-weight: 900;
+  font-size: 2rem;
+  color: #0f4c81;
+  text-align: center;
+}
+
+/* BOOK LIST SECTIONS */
+section.booklist {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+  padding: 24px;
+}
+/* TABLES */
+table.book-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.book-table thead tr {
+  background: #239b1a;
+  color: white;
+  font-weight: 700;
+  
+}
+
+table.book-table th,
+table.book-table td {
+  padding: 12px 10px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+
+
+
+/* ACTION BUTTONS */
+.accordion-toggle {
+  background: linear-gradient(#065f46, #10b981);
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  width: 100%;
+  text-align: left;
+  padding: 16px 22px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #eef0f1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.accordion-icon.rotated {
+  transform: rotate(90deg);
+}
+
+/* ACCORDION CONTENT */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.accordion-content.open {
+  max-height: 2000px; /* large number to allow full expansion */
+}
+
+/* RESPONSIVE LAYOUT */
+
+/* Mobile: Hamburger + Accordion list */
+@media (max-width: 767px) {
+
+  /* Book lists displayed as accordions */
+  section.booklist {
+    box-shadow: none;
+    margin-bottom: 0;
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
+    text-align: center;
+  }
+
+  .accordion-content {
+    margin-bottom: 24px;
+    padding-left: 32px;
+    padding-right: 12px;
+    background: white;
+    border-radius: 12px;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+  }
+  table.book-table th,
+  table.book-table td {
+    padding: 8px 6px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Desktop: 3-column grid layout for book lists */
+@media (min-width: 768px) and (max-width: 1439px) {
+  main.booklists-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  /* section.booklist {
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+    background: white;
+    padding: 24px;
+    margin: 0;
+  } */
+}
+
+/* Large desktop constraint */
+@media (min-width: 1440px) {
+  main.booklists-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+}
+
+</style>
+</head>
+<body>
+      <header id="new" >
+    <nav role="navigation" aria-label="Primary Navigation" class="container" >
+      <div class="navbar-logo" id="logos"><a href="index.html">
+        <img src="Images/Logo.png"  alt=""></a>
+      <span class="logo" tabindex="0">New Majestry School</span>
+      </div>
+      
+      <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <div class="nav-links" id="primary-navigation" role="menu">
+        <a href="index.html" role="menuitem" tabindex="0">Home</a>
+        <a href="about.html" role="menuitem" tabindex="0">About</a>
+        <a href="events.html" role="menuitem" tabindex="0">Events & Activities</a>
+        <a href="academics.html" role="menuitem" tabindex="0">Academics</a>
+        <a href="booklist.html" role="menuitem" tabindex="0">Book List</a>
+        <a href="admissions.html" role="menuitem" tabindex="0">Admissions</a>
+      </div>
+    </nav>
+  </header>
+
+    <div class="scrolling-container" aria-label="Announcement: Admission Open 2025-26">
+    <div class="scrolling-text" role="marquee" aria-live="off">
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+      <a href="admissions.html" id="scroll-link">Admission Open 2025-26</a>
+    </div>
+  </div>
+   <br>
+      <div class="apply-online-tab" tabindex="0" role="link" aria-label="Apply online for admission">
+  <a id="material-icons" href="admissions.html"><span  aria-hidden="true">Apply Online</span></a> 
+</div> <br>
+<main class="container">
+  <h1 class="page-title">Class Book List</h1>
+  <main class="booklists-container" aria-live="polite">
+
+    <section class="booklist" aria-labelledby="class1-title">
+      <button class="accordion-toggle" aria-expanded="false" aria-controls="class1-table" id="class1-title">
+        Class 1
+        <span class="material-icons accordion-icon">></span>
+      </button>
+      <div class="accordion-content" id="class1-table" role="region" aria-labelledby="class1-title">
+        <table class="book-table" summary="Books required for Class 1">
+          <thead>
+            <tr>
+              <th>S.NO</th>
+              <th>Publication</th>
+              <th>Book</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>GURUJI</td><td>HINDI</td></tr>
+            <tr><td>2</td><td>GURUJI</td><td>ENGLISH</td></tr>
+            <tr><td>3</td><td>E-Llumne</td><td>EVS</td></tr>
+            <tr><td>4</td><td>E-Llumne</td><td>MATHS</td></tr>
+            <tr><td>5</td><td>E-Llumne</td><td>GRAMMAR</td></tr>
+            <tr><td>6</td><td>SPEEDWELL</td><td>VYAKARAN</td></tr>
+            <tr><td>7</td><td>EDAC</td><td>COMPUTER</td></tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th>Copy</th>
+              <th>Qty</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>FourLine</td><td>8</td><td>320</td></tr>
+            <tr><td>DoubleLine</td><td>3</td><td>120</td></tr>
+            <tr><td>BOX</td><td>4</td><td>160</td></tr>
+            <tr><td>Mix Test Copy</td><td>2</td><td>20</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>17</strong></td><td><strong>620</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="booklist" aria-labelledby="class1-title">
+      <button class="accordion-toggle" aria-expanded="false" aria-controls="class1-table" id="class1-title">
+        Class 2
+        <span class="material-icons accordion-icon">></span>
+      </button>
+      <div class="accordion-content" id="class1-table" role="region" aria-labelledby="class1-title">
+        <table class="book-table" summary="Books required for Class 1">
+          <thead>
+            <tr>
+              <th>S.NO</th>
+              <th>Publication</th>
+              <th>Book</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>GURUJI</td><td>HINDI</td></tr>
+            <tr><td>2</td><td>GURUJI</td><td>ENGLISH</td></tr>
+            <tr><td>3</td><td>E-Llumne</td><td>EVS</td></tr>
+            <tr><td>4</td><td>E-Llumne</td><td>MATHS</td></tr>
+            <tr><td>5</td><td>E-Llumne</td><td>GRAMMAR</td></tr>
+            <tr><td>6</td><td>SPEEDWELL</td><td>VYAKARAN</td></tr>
+            <tr><td>7</td><td>EDAC</td><td>COMPUTER</td></tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th>Copy</th>
+              <th>Qty</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>FourLine</td><td>8</td><td>320</td></tr>
+            <tr><td>DoubleLine</td><td>3</td><td>120</td></tr>
+            <tr><td>BOX</td><td>4</td><td>160</td></tr>
+            <tr><td>Mix Test Copy</td><td>2</td><td>20</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>17</strong></td><td><strong>620</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="booklist" aria-labelledby="class1-title">
+      <button class="accordion-toggle" aria-expanded="false" aria-controls="class1-table" id="class1-title">
+        Class 3
+        <span class="material-icons accordion-icon">></span>
+      </button>
+      <div class="accordion-content" id="class1-table" role="region" aria-labelledby="class1-title">
+        <table class="book-table" summary="Books required for Class 1">
+          <thead>
+            <tr>
+              <th>S.NO</th>
+              <th>Publication</th>
+              <th>Book</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>GURUJI</td><td>HINDI</td></tr>
+            <tr><td>2</td><td>GURUJI</td><td>ENGLISH</td></tr>
+            <tr><td>3</td><td>E-Llumne</td><td>SCIENCE</td></tr>
+            <tr><td>4</td><td>E-Llumne</td><td>MATHS</td></tr>
+            <tr><td>5</td><td>E-Llumne</td><td>GRAMMAR</td></tr>
+            <tr><td>6</td><td>SPEEDWELL</td><td>VYAKARAN</td></tr>
+            <tr><td>7</td><td>EDAC</td><td>COMPUTER</td></tr>
+            <tr><td>8</td><td>E-Llumne</td><td>SOCIAL SCIENCE</td></tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th>Copy</th>
+              <th>Qty</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>FourLine</td><td>8</td><td>320</td></tr>
+            <tr><td>DoubleLine</td><td>3</td><td>120</td></tr>
+            <tr><td>BOX</td><td>4</td><td>160</td></tr>
+            <tr><td>Mix Test Copy</td><td>2</td><td>20</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>17</strong></td><td><strong>620</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+        <section class="booklist" aria-labelledby="class1-title">
+      <button class="accordion-toggle" aria-expanded="false" aria-controls="class1-table" id="class1-title">
+        Class 4
+        <span class="material-icons accordion-icon">></span>
+      </button>
+      <div class="accordion-content" id="class1-table" role="region" aria-labelledby="class1-title">
+        <table class="book-table" summary="Books required for Class 1">
+          <thead>
+            <tr>
+              <th>S.NO</th>
+              <th>Publication</th>
+              <th>Book</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>GURUJI</td><td>HINDI</td></tr>
+            <tr><td>2</td><td>GURUJI</td><td>ENGLISH</td></tr>
+            <tr><td>3</td><td>E-Llumne</td><td>SCIENCE</td></tr>
+            <tr><td>4</td><td>E-Llumne</td><td>MATHS</td></tr>
+            <tr><td>5</td><td>E-Llumne</td><td>GRAMMAR</td></tr>
+            <tr><td>6</td><td>SPEEDWELL</td><td>VYAKARAN</td></tr>
+            <tr><td>7</td><td>EDAC</td><td>COMPUTER</td></tr>
+            <tr><td>8</td><td>E-Llumne</td><td>SOCIAL SCIENCE</td></tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th>Copy</th>
+              <th>Qty</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>FourLine</td><td>8</td><td>320</td></tr>
+            <tr><td>DoubleLine</td><td>3</td><td>120</td></tr>
+            <tr><td>BOX</td><td>4</td><td>160</td></tr>
+            <tr><td>Mix Test Copy</td><td>2</td><td>20</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>17</strong></td><td><strong>620</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+            <section class="booklist" aria-labelledby="class1-title">
+      <button class="accordion-toggle" aria-expanded="false" aria-controls="class1-table" id="class1-title">
+        Class 5
+        <span class="material-icons accordion-icon">></span>
+      </button>
+      <div class="accordion-content" id="class1-table" role="region" aria-labelledby="class1-title">
+        <table class="book-table" summary="Books required for Class 1">
+          <thead>
+            <tr>
+              <th>S.NO</th>
+              <th>Publication</th>
+              <th>Book</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>SAMVID</td><td>HINDI</td></tr>
+            <tr><td>2</td><td>SAMVID</td><td>MATHS</td></tr>
+            <tr><td>3</td><td>SAMVID</td><td>EVS</td></tr>
+            <tr><td>4</td><td>SAMVID</td><td>ENGLISH</td></tr>
+            <tr><td>5</td><td>GURUJI</td><td>GRAMMAR</td></tr>
+            <tr><td>6</td><td>EDAC</td><td>COMPUTER</td></tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th>Copy</th>
+              <th>Qty</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>A4 (168 Page)</td><td>10</td><td>600</td></tr>
+            <tr><td>RUF</td><td>2</td><td>120</td></tr>
+            <tr><td>Mix Test Copy</td><td>6</td><td>60</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>18</strong></td><td><strong>780</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+     <section class="booklist" aria-labelledby="class1-title">
+      <button class="accordion-toggle" aria-expanded="false" aria-controls="class1-table" id="class1-title">
+        Class 6
+        <span class="material-icons accordion-icon">></span>
+      </button>
+      <div class="accordion-content" id="class1-table" role="region" aria-labelledby="class1-title">
+        <table class="book-table" summary="Books required for Class 1">
+          <thead>
+            <tr>
+              <th>S.NO</th>
+              <th>Publication</th>
+              <th>Book</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>SAMVID</td><td>HINDI</td></tr>
+            <tr><td>2</td><td>EDAC</td><td>ENGLISH</td></tr>
+            <tr><td>3</td><td>NCERT</td><td>SANSKRIT</td></tr>
+            <tr><td>4</td><td>EDAC</td><td>MATHS</td></tr>
+            <tr><td>5</td><td>EDAC</td><td>MATHS 1</td></tr>
+            <tr><td>6</td><td>EDAC</td><td>MATHS 2</td></tr>
+            <tr><td>7</td><td>OLYMPIAN</td><td>SCIENCE</td></tr>
+            <tr><td>8</td><td>OLYMPIAN</td><td>SOCIAL SCIENCE</td></tr>
+            <tr><td>9</td><td>EDAC</td><td>ENGLISH 1</td></tr>
+            <tr><td>10</td><td>EDAC</td><td>ENGLISH </td></tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th>Copy</th>
+              <th>Qty</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>A4 (168 Page)</td><td>10</td><td>600</td></tr>
+            <tr><td>RUF</td><td>2</td><td>120</td></tr>
+            <tr><td>Mix Test Copy</td><td>6</td><td>60</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>18</strong></td><td><strong>780</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+         <section class="booklist" aria-labelledby="class1-title">
+      <button class="accordion-toggle" aria-expanded="false" aria-controls="class1-table" id="class1-title">
+        Class 7
+        <span class="material-icons accordion-icon">></span>
+      </button>
+      <div class="accordion-content" id="class1-table" role="region" aria-labelledby="class1-title">
+        <table class="book-table" summary="Books required for Class 1">
+          <thead>
+            <tr>
+              <th>S.NO</th>
+              <th>Publication</th>
+              <th>Book</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>SAMVID</td><td>HINDI</td></tr>
+            <tr><td>2</td><td>EDAC</td><td>ENGLISH</td></tr>
+            <tr><td>3</td><td>NCERT</td><td>SANSKRIT</td></tr>
+            <tr><td>4</td><td>EDAC</td><td>MATHS</td></tr>
+            <tr><td>5</td><td>EDAC</td><td>MATHS 1</td></tr>
+            <tr><td>6</td><td>EDAC</td><td>MATHS 2</td></tr>
+            <tr><td>7</td><td>OLYMPIAN</td><td>SCIENCE</td></tr>
+            <tr><td>8</td><td>OLYMPIAN</td><td>SOCIAL SCIENCE</td></tr>
+            <tr><td>9</td><td>EDAC</td><td>ENGLISH 1</td></tr>
+            <tr><td>10</td><td>EDAC</td><td>ENGLISH </td></tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th>Copy</th>
+              <th>Qty</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>A4 (168 Page)</td><td>10</td><td>600</td></tr>
+            <tr><td>RUF</td><td>2</td><td>120</td></tr>
+            <tr><td>Mix Test Copy</td><td>6</td><td>60</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>18</strong></td><td><strong>780</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="booklist" aria-labelledby="class1-title">
+      <button class="accordion-toggle" aria-expanded="false" aria-controls="class1-table" id="class1-title">
+        Class 8
+        <span class="material-icons accordion-icon">></span>
+      </button>
+      <div class="accordion-content" id="class1-table" role="region" aria-labelledby="class1-title">
+        <table class="book-table" summary="Books required for Class 1">
+          <thead>
+            <tr>
+              <th>S.NO</th>
+              <th>Publication</th>
+              <th>Book</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>SAMVID</td><td>SANSKRIT</td></tr>
+            <tr><td>2</td><td>SAMVID</td><td>ENGLISH</td></tr>
+            <tr><td>3</td><td>SAMVID</td><td>HINDI</td></tr>
+            <tr><td>4</td><td>SAMVID</td><td>SOCIAL SCIENCE</td></tr>
+            <tr><td>5</td><td>SAMVID</td><td>MATHS</td></tr>
+            <tr><td>6</td><td>SAMVID</td><td>SCIENCE</td></tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th>Copy</th>
+              <th>Qty</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>A4 (168 Page)</td><td>10</td><td>600</td></tr>
+            <tr><td>RUF</td><td>2</td><td>120</td></tr>
+            <tr><td>Mix Test Copy</td><td>6</td><td>60</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>18</strong></td><td><strong>780</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+        <section class="booklist" aria-labelledby="class1-title">
+      <button class="accordion-toggle" aria-expanded="false" aria-controls="class1-table" id="class1-title">
+        Class-NURSERY
+        <span class="material-icons accordion-icon">></span>
+      </button>
+      <div class="accordion-content" id="class1-table" role="region" aria-labelledby="class1-title">
+        <table class="book-table" summary="Books required for Class 1">
+          <thead>
+            <tr>
+              <th>S.NO</th>
+              <th>Publication</th>
+              <th>Book</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>EDAC</td><td>12 BOOKS</td></tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th>Copy</th>
+              <th>Qty</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>FOUR LINE</td><td>4</td><td>160</td></tr>
+            <tr><td>DOUBLE LINE</td><td>4</td><td>160</td></tr>
+            <tr><td>BOX</td><td>4</td><td>160</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>12</strong></td><td><strong>480</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+   <section class="booklist" aria-labelledby="class1-title">
+      <button class="accordion-toggle" aria-expanded="false" aria-controls="class1-table" id="class1-title">
+        Class-LKG
+        <span class="material-icons accordion-icon">></span>
+      </button>
+      <div class="accordion-content" id="class1-table" role="region" aria-labelledby="class1-title">
+        <table class="book-table" summary="Books required for Class 1">
+          <thead>
+            <tr>
+              <th>S.NO</th>
+              <th>Publication</th>
+              <th>Book</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>EDAC</td><td>12 BOOKS</td></tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th>Copy</th>
+              <th>Qty</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>FOUR LINE</td><td>4</td><td>160</td></tr>
+            <tr><td>DOUBLE LINE</td><td>4</td><td>160</td></tr>
+            <tr><td>BOX</td><td>4</td><td>160</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>12</strong></td><td><strong>480</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  <section class="booklist" aria-labelledby="class1-title">
+      <button class="accordion-toggle" aria-expanded="false" aria-controls="class1-table" id="class1-title">
+        Class-UKG
+        <span class="material-icons accordion-icon">></span>
+      </button>
+      <div class="accordion-content" id="class1-table" role="region" aria-labelledby="class1-title">
+        <table class="book-table" summary="Books required for Class 1">
+          <thead>
+            <tr>
+              <th>S.NO</th>
+              <th>Publication</th>
+              <th>Book</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>EDAC</td><td>12 BOOKS</td></tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th>Copy</th>
+              <th>Qty</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>FOUR LINE</td><td>4</td><td>160</td></tr>
+            <tr><td>DOUBLE LINE</td><td>4</td><td>160</td></tr>
+            <tr><td>BOX</td><td>4</td><td>160</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>12</strong></td><td><strong>480</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</main>
+
+    <main role="main" class="admission-page">
+      <h1 class="admission-page__title">Admission Open 2025-26</h1>
+      <a href="#admissions"><button class="admission-page__button" type="button" aria-label="Apply online for admission, classes 1st to 12th"> Apply Online Classes 1st to 12th </button></a>
+  </main> <br>
+    <!-- GOOGLE MAP START -->
+ <div id="map">
+    <section class="map-container" aria-label="Map showing school location">
+      <iframe
+        class="map-iframe"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3677.5506793288837!2d75.9346867!3d22.8191073!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631cedf5673ef5%3A0x706c281bfd28579e!2sNew%20Ames%20School%2Cdwarka%20Valley%2C%20in%20front%20of%20omaxe%20city%20-2%2Cmangliya%2C%20Indoreangliya!5e0!3m2!1sen!2sin!4v1750017930376!5m2!1sen!2sin"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Google Map of Greenwood Elementary School"
+      ></iframe>
+    </section>
+  </div>
+    <!-- Footer Page Start ! -->
+   
+
+  <footer class="footer" role="contentinfo" aria-label="School website footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <!-- Quick Links -->
+      <section class="footer-section" aria-labelledby="footer-quick-links-title">
+        <h3 id="footer-quick-links-title">Quick Links</h3>
+        <nav aria-label="Quick Links Navigation">
+          <ul class="footer-links">
+            <li><a href="index.html" tabindex="0">Home</a></li>
+            <li><a href="about.html" tabindex="0">About Us</a></li>
+            <li><a href="events.html" tabindex="0">Events & Activities</a></li>
+            <li><a href="academics.html" tabindex="0">Academics</a></li>
+            <li><a href="booklist.html" tabindex="0">Book List</a></li>
+            <li><a href="admissions.html" tabindex="0">Admissions</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <!-- Contact Info -->
+      <section class="footer-section" aria-labelledby="footer-contact-title">
+        <h3 id="footer-contact-title">Contact</h3>
+        <ul class="contact-list">
+          <li><strong>Phone:</strong> <a href="tel:+1234567890" tabindex="0">9009088328 </a></li>
+          <li><strong>Phone:</strong> <a href="tel:+1234567890" tabindex="0">6260556227</a></li>
+          <li><strong>Email:</strong> <a href="mailto:info@school.edu" tabindex="0">info@school.edu</a></li>
+        </ul>
+      </section>
+
+      <!-- Address -->
+      <section class="footer-section" aria-labelledby="footer-address-title">
+        <h3 id="footer-address-title">Address</h3>
+        <address class="address-list" tabindex="0">
+          103,104 Dwarka Valley Colony<br />
+          Mangliya, Indore (453771)<br />
+          Madhya Pradesh.
+        </address>
+      </section>
+
+      <!-- Social Media -->
+      <section class="footer-section" aria-labelledby="footer-social-title">
+        <h3 id="footer-social-title">Follow Us</h3>
+        <ul class="social-list">
+          <li><a href="https://facebook.com/school" aria-label="Facebook" tabindex="0" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" focusable="false" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.406.593 24 1.325 24h11.494v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.892-4.788 4.659-4.788 1.325 0 2.466.099 2.797.143v3.24l-1.918.001c-1.505 0-1.797.716-1.797 1.765v2.316h3.592l-.468 3.622h-3.124V24h6.116c.73 0 1.324-.593 1.324-1.326V1.326C24 .593 23.406 0 22.675 0z"/></svg>
+          </a></li>
+ 
+          <li><a href="https://www.instagram.com/newmajestryschool/" aria-label="Instagram" tabindex="0" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" focusable="false" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.07 1.645.07 4.85 0 3.204-.012 3.584-.07 4.85-.149 3.227-1.667 4.771-4.919 4.919-1.267.058-1.645.07-4.85.07-3.204 0-3.584-.012-4.85-.07-3.252-.148-4.771-1.692-4.919-4.919-.058-1.266-.07-1.645-.07-4.85 0-3.205.012-3.585.07-4.85.148-3.228 1.667-4.771 4.919-4.919 1.267-.058 1.645-.07 4.85-.07zm0-2.163c-3.292 0-3.703.012-4.99.07-4.159.19-6.95 3.388-7.14 7.524-.06 1.274-.07 1.695-.07 4.854 0 3.292.012 3.703.07 4.99.19 4.159 3.388 6.95 7.524 7.14 1.274.06 1.695.07 4.854.07 3.292 0 3.703-.012 4.99-.07 4.159-.19 6.95-3.388 7.14-7.524.06-1.274.07-1.696.07-4.854 0-3.292-.012-3.703-.07-4.99-.19-4.159-3.388-6.953-7.524-7.14zM12 5.838c-3.404 0-6.162 2.758-6.162 6.162s2.758 6.162 6.162 6.162 6.162-2.758 6.162-6.162-2.758-6.162-6.162-6.162zm0 10.23c-2.265 0-4.068-1.803-4.068-4.068s1.803-4.068 4.068-4.068 4.068 1.803 4.068 4.068-1.803 4.068-4.068 4.068zm6.406-11.845a1.44 1.44 0 1 1 0-2.88 1.44 1.44 0 0 1 0 2.88z"/></svg>
+          </a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 New Majestry School. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+    
+  // Mobile menu toggle
+  // Accordion toggles for booklists on mobile
+  const accordions = document.querySelectorAll('.accordion-toggle');
+  accordions.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true' || false;
+      btn.setAttribute('aria-expanded', !expanded);
+
+      const icon = btn.querySelector('.accordion-icon');
+      icon.classList.toggle('rotated');
+
+      const content = btn.nextElementSibling;
+      if (content.classList.contains('open')) {
+        content.classList.remove('open');
+      } else {
+        content.classList.add('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>
+
